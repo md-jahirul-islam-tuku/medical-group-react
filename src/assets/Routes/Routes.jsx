@@ -15,6 +15,10 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
+        loader: async () => {
+          const res = await fetch("/doctorsData.json");
+          return res.json();
+        },
         hydrateFallbackElement: <h1>Loading ...</h1>,
         Component: Home,
       },

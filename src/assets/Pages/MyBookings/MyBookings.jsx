@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyBookings = () => {
   return (
-    <div>
+    <div className='pt-20 max-w-[1170px] mx-auto'>
       <h1>My Bookings</h1>
     </div>
   );
