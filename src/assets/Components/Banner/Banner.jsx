@@ -15,9 +15,9 @@ const Banner = () => {
               a routine checkup or urgent consultation, book appointments in
               minutes and receive quality care you can trust.
             </p>
-            <div className="join">
+            <div className="md:flex justify-center">
               <div>
-                <label className="input validator join-item rounded-l-full w-108">
+                <label className="input validator join-item md:rounded-l-full w-108">
                   <input
                     type="text"
                     placeholder="Search any doctor..."
@@ -28,7 +28,7 @@ const Banner = () => {
                   Enter valid email address
                 </div> */}
               </div>
-              <button className="btn btn-primary rounded-r-full join-item shadow-none">
+              <button className="btn btn-primary md:rounded-r-full join-item shadow-none mt-3 md:mt-0">
                 Search Now
               </button>
             </div>

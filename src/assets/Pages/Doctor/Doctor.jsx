@@ -1,6 +1,9 @@
 import React from "react";
+import { FaRegRegistered } from "react-icons/fa6";
 
 const Doctor = ({ doctor }) => {
+  const today=new Date().toLocaleDateString("en-US",{weekday:"long",});
+  const isAvailableToday=doctor.availability.includes(today);
   const { doctorImage, name, education, registrationNumber, experience } =
     doctor;
   return (
@@ -9,11 +12,13 @@ const Doctor = ({ doctor }) => {
         <img src={doctorImage} alt="Shoes" className="rounded-lg" />
       </figure>
       <div className="card-body">
-        <p><span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span> <span className="bg-blue-100 px-3 py-1 rounded-full border border-blue-300 text-blue-600 font-semibold">{experience} Years Experience</span></p>
+        <p>
+          {isAvailableToday?(<span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span>):(<span className="bg-red-100 px-3 py-1 rounded-full border border-red-300 text-red-600 font-semibold">Not Available</span>)}
+           <span className="bg-blue-100 px-3 py-1 rounded-full border border-blue-300 text-blue-600 font-semibold ml-2">{experience} Years Experience</span></p>
         <h2 className="card-title text-2xl font-bold">{name}</h2>
         <p className="text-lg text-gray-400 font-semibold">{education}</p>
         <hr className="border-dashed border border-gray-400" />
-        <p className="text-lg text-gray-400 font-semibold">Reg No: {registrationNumber}</p>
+        <p className="text-lg text-gray-400 font-semibold flex items-center"><FaRegRegistered className="mr-2" /> Reg No: {registrationNumber}</p>
         <div className="card-actions w-full">
           <button className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
             View Details

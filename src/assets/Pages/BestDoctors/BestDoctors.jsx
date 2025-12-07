@@ -15,7 +15,7 @@ const BestDoctors = ({ data }) => {
           receive quality care you can trust.
         </p>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {visibleDoctors.map((doctor) => (
           <Doctor key={doctor.id} doctor={doctor} />
         ))}
