@@ -4,15 +4,16 @@ const Doctor = ({ doctor }) => {
   const { doctorImage, name, education, registrationNumber, experience } =
     doctor;
   return (
-    <div className="card bg-base-100 shadow-sm">
+    <div className="card bg-base-100 shadow-sm rounded-2xl">
       <figure className="px-5 pt-5">
         <img src={doctorImage} alt="Shoes" className="rounded-lg" />
       </figure>
-      <div className="card-body items-center text-center">
-        <p><span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span> <span>{experience} Years Experience</span></p>
-        <h2 className="card-title">{name}</h2>
-        <p>{education}</p>
-        <p>{registrationNumber}</p>
+      <div className="card-body">
+        <p><span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span> <span className="bg-blue-100 px-3 py-1 rounded-full border border-blue-300 text-blue-600 font-semibold">{experience} Years Experience</span></p>
+        <h2 className="card-title text-2xl font-bold">{name}</h2>
+        <p className="text-lg text-gray-400 font-semibold">{education}</p>
+        <hr className="border-dashed border border-gray-400" />
+        <p className="text-lg text-gray-400 font-semibold">Reg No: {registrationNumber}</p>
         <div className="card-actions w-full">
           <button className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
             View Details

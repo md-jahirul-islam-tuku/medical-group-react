@@ -37,7 +37,7 @@ const Footer = () => {
       <div className="navbar-center py-3">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-      <hr className="max-w-140 mx-auto border-base-300 pb-3" />
+      <hr className="max-w-140 mx-auto border-gray-300 pb-3" />
       <div className="navbar-center">
         <ul className="menu menu-horizontal px-1 text-3xl">
           <li><a href=""><FaFacebookSquare /></a></li>
