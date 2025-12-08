@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FaRegRegistered } from "react-icons/fa6";
 import { useLoaderData, useNavigate, useParams } from "react-router";
 import { TbCurrencyTaka } from "react-icons/tb";
@@ -6,9 +6,6 @@ import { addId } from "../../Utilities/addToDB";
 import { toast, ToastContainer } from "react-toastify";
 
 const DoctorDetails = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   const navigate = useNavigate();
   const handleAdd = (id) => {
     const result = addId(id);
