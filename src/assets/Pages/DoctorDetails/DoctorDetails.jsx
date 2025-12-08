@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { FaRegRegistered } from "react-icons/fa6";
-import { useLoaderData, useParams } from "react-router";
+import { useLoaderData, useNavigate, useParams } from "react-router";
 import { TbCurrencyTaka } from "react-icons/tb";
 import { addId } from "../../Utilities/addToDB";
 import { toast, ToastContainer } from "react-toastify";
@@ -9,20 +9,25 @@ const DoctorDetails = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  const navigate = useNavigate();
   const handleAdd = (id) => {
     const result = addId(id);
 
     if (result === "ID_ADDED") {
       toast.success("Booking Appointment Successful ✅");
+      setTimeout(() => navigate("/bookings"), 1200);
     } else if (result === "ID_EXISTS") {
       toast.error("Already appointed ⚠️");
+      setTimeout(() => navigate("/#bestDoctors"), 1000);
     } else {
       toast.error("Invalid Doctor ID ❌");
     }
   };
-  const { id } = useParams();
+  const { doctorId } = useParams();
   const doctors = useLoaderData();
-  const doctorDetails = doctors.find((doctor) => doctor.id === Number(id));
+  const doctorDetails = doctors.find(
+    (doctor) => doctor.doctorId === Number(doctorId)
+  );
   const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
   const isAvailableToday = doctorDetails.availability.includes(today);
   const {
@@ -112,12 +117,12 @@ const DoctorDetails = () => {
         </div>
         <div className="text-center">
           <button
-            onClick={() => handleAdd(id)}
+            onClick={() => handleAdd(doctorId)}
             className="btn btn-primary shadow-none rounded-full w-full text-xl my-7"
           >
             Book Appointment Now
           </button>
-          <ToastContainer autoClose={1000} position="bottom-right" />
+          <ToastContainer autoClose={1000} position="top-right" />
         </div>
       </div>
     </div>

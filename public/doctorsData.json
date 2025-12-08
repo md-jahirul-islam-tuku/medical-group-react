@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "doctorId": 1,
     "doctorImage": "https://i.ibb.co/BKB6Qqkf/Dr1.png",
     "name": "Dr. Arif Hossain",
     "education": "MBBS, FCPS (Medicine)",
@@ -12,7 +12,7 @@
     "workingAt": "Dhaka Medical College"
   },
   {
-    "id": 2,
+    "doctorId": 2,
     "doctorImage": "https://i.ibb.co/Q7nMDMKC/Dr2.png",
     "name": "Dr. Nafisa Karim",
     "education": "MBBS, MS (Gynecology)",
@@ -24,7 +24,7 @@
     "workingAt": "Evercare Hospital Dhaka"
   },
   {
-    "id": 3,
+    "doctorId": 3,
     "doctorImage": "https://i.ibb.co/V09GdmjJ/Dr3.png",
     "name": "Dr. Imran Siddique",
     "education": "MBBS, MD (Cardiology)",
@@ -36,7 +36,7 @@
     "workingAt": "National Heart Foundation"
   },
   {
-    "id": 4,
+    "doctorId": 4,
     "doctorImage": "https://i.ibb.co/vx8009FS/Dr4.png",
     "name": "Dr. Samia Rahman",
     "education": "MBBS, FCPS (Dermatology)",
@@ -48,7 +48,7 @@
     "workingAt": "Square Hospital"
   },
   {
-    "id": 5,
+    "doctorId": 5,
     "doctorImage": "https://i.ibb.co/PvYwGZG5/Dr5.png",
     "name": "Dr. Mahmud Hasan",
     "education": "MBBS, MS (Orthopedics)",
@@ -60,7 +60,7 @@
     "workingAt": "Bangabandhu Sheikh Mujib Medical University"
   },
   {
-    "id": 6,
+    "doctorId": 6,
     "doctorImage": "https://i.ibb.co/M55qPFCS/Dr6.png",
     "name": "Dr. Laila Chowdhury",
     "education": "MBBS, FCPS (Pediatrics)",
@@ -72,7 +72,7 @@
     "workingAt": "Ibrahim Cardiac Hospital"
   },
   {
-    "id": 7,
+    "doctorId": 7,
     "doctorImage": "https://i.ibb.co/mrNStLjg/Dr7.png",
     "name": "Dr. Shafayat Ahmed",
     "education": "MBBS, MD (Neurology)",
@@ -84,7 +84,7 @@
     "workingAt": "United Hospital"
   },
   {
-    "id": 8,
+    "doctorId": 8,
     "doctorImage": "https://i.ibb.co/yBYsVs5j/Dr8.png",
     "name": "Dr. Farzana Nahar",
     "education": "MBBS, FCPS (ENT)",
@@ -96,7 +96,7 @@
     "workingAt": "Dhaka Central Hospital"
   },
   {
-    "id": 9,
+    "doctorId": 9,
     "doctorImage": "https://i.ibb.co/yBxd5Kc9/Dr9.png",
     "name": "Dr. Kamrul Islam",
     "education": "MBBS, MD (Nephrology)",
@@ -108,7 +108,7 @@
     "workingAt": "Kidney Foundation Hospital"
   },
   {
-    "id": 10,
+    "doctorId": 10,
     "doctorImage": "https://i.ibb.co/zTkx586H/Dr10.png",
     "name": "Dr. Ruma Sultana",
     "education": "MBBS, FCPS (Ophthalmology)",
@@ -120,7 +120,7 @@
     "workingAt": "Vision Eye Hospital"
   },
   {
-    "id": 11,
+    "doctorId": 11,
     "doctorImage": "https://i.ibb.co/mC1LQBVG/Dr11.png",
     "name": "Dr. Nazmul Haque",
     "education": "MBBS, FCPS (Surgery)",
@@ -132,7 +132,7 @@
     "workingAt": "Popular Diagnostic Centre"
   },
   {
-    "id": 12,
+    "doctorId": 12,
     "doctorImage": "https://i.ibb.co/LqhvjqX/Dr12.png",
     "name": "Dr. Mehnaz Jahan",
     "education": "MBBS, MD (Psychiatry)",

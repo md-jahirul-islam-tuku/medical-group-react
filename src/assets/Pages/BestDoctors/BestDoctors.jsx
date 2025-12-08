@@ -5,7 +5,7 @@ const BestDoctors = ({ data }) => {
   const [showAll, setShowAll] = useState(false);
   const visibleDoctors = showAll ? data : data.slice(0, 6);
   return (
-    <div className="py-20">
+    <div id="bestDoctors" className="py-20">
       <div className="text-center">
         <h1 className="text-3xl font-bold">Our Best Doctors</h1>
         <p className="lg:px-20 py-5">
@@ -17,7 +17,7 @@ const BestDoctors = ({ data }) => {
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
         {visibleDoctors.map((doctor) => (
-          <Doctor key={doctor.id} doctor={doctor} />
+          <Doctor key={doctor.doctorId} doctor={doctor} />
         ))}
       </div>
       {data.length > 6 && (

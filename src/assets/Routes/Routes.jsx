@@ -25,6 +25,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "bookings",
+        loader: async () => {
+          const res = await fetch("/doctorsData.json");
+          return res.json();
+        },
+        hydrateFallbackElement: <h1>Loading ...</h1>,
         Component: MyBookings,
       },
       {
@@ -36,7 +41,7 @@ export const router = createBrowserRouter([
         Component: ContactUs,
       },
       {
-        path: "doctor/:id",
+        path: "doctor/:doctorId",
         loader: async () => {
           const res = await fetch("/doctorsData.json");
           return res.json();
