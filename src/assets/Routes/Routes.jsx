@@ -6,6 +6,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import MyBookings from "../Pages/MyBookings/MyBookings";
 import Faq from "../Pages/FAQ/Faq";
 import ContactUs from "../Pages/ContactUs/ContactUs";
+import DoctorDetails from "../Pages/DoctorDetails/DoctorDetails";
 
 export const router = createBrowserRouter([
   {
@@ -23,17 +24,26 @@ export const router = createBrowserRouter([
         Component: Home,
       },
       {
-        path:"bookings",
-        Component:MyBookings
+        path: "bookings",
+        Component: MyBookings,
       },
       {
-        path:"faq",
-        Component:Faq
+        path: "faq",
+        Component: Faq,
       },
       {
-        path:"contact",
-        Component:ContactUs
-      }
+        path: "contact",
+        Component: ContactUs,
+      },
+      {
+        path: "doctorDetails/:id",
+        loader: async () => {
+          const res = await fetch("/doctorsData.json");
+          return res.json();
+        },
+        hydrateFallbackElement: <h1>Loading ...</h1>,
+        Component: DoctorDetails,
+      },
     ],
   },
 ]);
