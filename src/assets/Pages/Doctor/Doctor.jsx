@@ -1,10 +1,11 @@
 import React from "react";
 import { FaRegRegistered } from "react-icons/fa6";
+import { Link } from "react-router";
 
 const Doctor = ({ doctor }) => {
   const today=new Date().toLocaleDateString("en-US",{weekday:"long",});
   const isAvailableToday=doctor.availability.includes(today);
-  const { doctorImage, name, education, registrationNumber, experience } =
+  const { id, doctorImage, name, education, registrationNumber, experience } =
     doctor;
   return (
     <div className="card bg-base-100 shadow-sm rounded-2xl">
@@ -19,10 +20,10 @@ const Doctor = ({ doctor }) => {
         <p className="text-lg text-gray-400 font-semibold">{education}</p>
         <hr className="border-dashed border border-gray-400" />
         <p className="text-lg text-gray-400 font-semibold flex items-center"><FaRegRegistered className="mr-2" /> Reg No: {registrationNumber}</p>
-        <div className="card-actions w-full">
-          <button className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
+        <div className="card-actions w-full mt-5">
+          <Link to={`doctorDetails/${id}`} className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>

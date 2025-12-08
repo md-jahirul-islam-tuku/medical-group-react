@@ -6,7 +6,8 @@ const DoctorDetails = () => {
   const { id } = useParams();
   const doctors = useLoaderData();
   const doctorDetails = doctors.find((doctor) => doctor.id === Number(id));
-
+  const today = new Date().toLocaleDateString("en-US", { weekday: "long" });
+  const isAvailableToday = doctorDetails.availability.includes(today);
   const {
     doctorImage,
     name,
@@ -22,9 +23,9 @@ const DoctorDetails = () => {
       <div className="text-center py-16 px-20 bg-white rounded-xl">
         <h1 className="text-4xl font-bold">{name}'s Profile Details</h1>
         <p className="py-3">
-          <span className="text-lg font-semibold">Dr. Jonathan Smith</span> {experience} years experienced. A
-          trusted medical professional committed to providing expert care with
-          compassion.
+          <span className="text-lg font-semibold">{name}</span>{" "}
+          {experience} years experienced. A trusted medical professional
+          committed to providing expert care with compassion.
         </p>
       </div>
       <div className="card card-side bg-base-100 mt-10">
@@ -43,15 +44,12 @@ const DoctorDetails = () => {
           <hr className="border-gray-300 border-dashed mb-2" />
           <p>
             <span className="text-lg mr-3 font-semibold">Availability :</span>
-            <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold">
-              Available
-            </span>
-            <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold">
-              Available
-            </span>
-            <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold">
-              Available
-            </span>
+
+            {availability.map((day) => (
+              <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold mr-2 py-1">
+                {day}
+              </span>
+            ))}
           </p>
           <p className="text-lg">
             <span className="font-semibold">Consultation Fee:</span>
@@ -75,9 +73,7 @@ const DoctorDetails = () => {
         <hr className="border-gray-300 border-dashed" />
         <div className="flex justify-between py-5">
           <span className="font-bold">Availability</span>
-          <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold">
-            Available
-          </span>
+          {isAvailableToday?(<span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span>):(<span className="bg-red-100 px-3 py-1 rounded-full border border-red-300 text-red-600 font-semibold">Not Available</span>)}
         </div>
         <hr className="border-gray-300 border-dashed" />
         <div className="py-5 text-center">
