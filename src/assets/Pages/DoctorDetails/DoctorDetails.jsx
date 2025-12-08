@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaRegRegistered } from "react-icons/fa6";
 import { useLoaderData, useParams } from "react-router";
+import { TbCurrencyTaka } from "react-icons/tb";
 
 const DoctorDetails = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { id } = useParams();
   const doctors = useLoaderData();
   const doctorDetails = doctors.find((doctor) => doctor.id === Number(id));
@@ -23,9 +27,9 @@ const DoctorDetails = () => {
       <div className="text-center py-16 px-20 bg-white rounded-xl">
         <h1 className="text-4xl font-bold">{name}'s Profile Details</h1>
         <p className="py-3">
-          <span className="text-lg font-semibold">{name}</span>{" "}
-          {experience} years experienced. A trusted medical professional
-          committed to providing expert care with compassion.
+          <span className="text-lg font-semibold">{name}</span> {experience}{" "}
+          years experienced. A trusted medical professional committed to
+          providing expert care with compassion.
         </p>
       </div>
       <div className="card card-side bg-base-100 mt-10">
@@ -45,25 +49,27 @@ const DoctorDetails = () => {
           <p>
             <span className="text-lg mr-3 font-semibold">Availability :</span>
 
-            {availability.map((day) => (
-              <span className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold mr-2 py-1">
+            {availability.map((day, index) => (
+              <span
+                key={index}
+                className="bg-green-100 px-3 rounded-full border border-green-300 text-green-600 font-semibold mr-2 py-1"
+              >
                 {day}
               </span>
             ))}
           </p>
-          <p className="text-lg">
+          <p className="text-lg flex">
             <span className="font-semibold">Consultation Fee:</span>
-            <span className="text-blue-700 font-bold px-2">
-              Taka : {fee}
-            </span>{" "}
-            <span className="font-semibold text-gray-500">(Incl. Vat)</span>{" "}
+            <span className="text-blue-700 font-bold px-1 flex items-center">
+              Taka : {fee} <TbCurrencyTaka />
+            </span>
+            <span className="font-semibold text-gray-500 mr-1">
+              (Incl. Vat)
+            </span>
             <span className="font-semibold text-blue-700">
               Per Consultation
             </span>
           </p>
-          {/* <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
-          </div> */}
         </div>
       </div>
       <div className="mt-10 mb-20 bg-white p-7 rounded-xl">
@@ -73,7 +79,15 @@ const DoctorDetails = () => {
         <hr className="border-gray-300 border-dashed" />
         <div className="flex justify-between py-5">
           <span className="font-bold">Availability</span>
-          {isAvailableToday?(<span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">Available</span>):(<span className="bg-red-100 px-3 py-1 rounded-full border border-red-300 text-red-600 font-semibold">Not Available</span>)}
+          {isAvailableToday ? (
+            <span className="bg-green-100 px-3 py-1 rounded-full border border-green-300 text-green-600 font-semibold">
+              Available
+            </span>
+          ) : (
+            <span className="bg-red-100 px-3 py-1 rounded-full border border-red-300 text-red-600 font-semibold">
+              Not Available
+            </span>
+          )}
         </div>
         <hr className="border-gray-300 border-dashed" />
         <div className="py-5 text-center">

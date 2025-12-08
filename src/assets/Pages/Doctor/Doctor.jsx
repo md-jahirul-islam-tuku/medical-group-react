@@ -21,7 +21,7 @@ const Doctor = ({ doctor }) => {
         <hr className="border-dashed border border-gray-400" />
         <p className="text-lg text-gray-400 font-semibold flex items-center"><FaRegRegistered className="mr-2" /> Reg No: {registrationNumber}</p>
         <div className="card-actions w-full mt-5">
-          <Link to={`doctorDetails/${id}`} className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
+          <Link to={`/doctor/${id}`} className="btn btn-outline rounded-full btn-primary w-full shadow-none text-lg">
             View Details
           </Link>
         </div>

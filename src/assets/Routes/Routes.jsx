@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
         Component: ContactUs,
       },
       {
-        path: "doctorDetails/:id",
+        path: "doctor/:id",
         loader: async () => {
           const res = await fetch("/doctorsData.json");
           return res.json();

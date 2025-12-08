@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router";
+import './Navbar.css'
 
 const Navbar = () => {
   const links = (
@@ -42,7 +43,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow text-lg font-semibold text-gray-500"
             >
               {links}
             </ul>
@@ -57,7 +58,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+          <ul className="menu menu-horizontal px-1 text-lg font-semibold text-gray-500">{links}</ul>
         </div>
         <div className="navbar-end">
           <a className="btn btn-primary shadow-none rounded-full font-bold text-lg">
