@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import Doctor from "../Doctor/Doctor";
 
-const BestDoctors = ({ data }) => {
+const BestDoctors = ({ data, searchTerm }) => {
   const [showAll, setShowAll] = useState(false);
-  const visibleDoctors = showAll ? data : data.slice(0, 6);
+
+  // Filter doctors based on searchTerm
+  const filteredDoctors = data.filter((doctor) =>
+    doctor.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  // Decide which doctors to show
+  const visibleDoctors = showAll ? filteredDoctors : filteredDoctors.slice(0, 6);
+
   return (
     <div id="bestDoctors" className="py-20">
       <div className="text-center">
@@ -15,12 +23,23 @@ const BestDoctors = ({ data }) => {
           receive quality care you can trust.
         </p>
       </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {visibleDoctors.map((doctor) => (
-          <Doctor key={doctor.doctorId} doctor={doctor} />
-        ))}
+
+      <div className={` 
+        ${visibleDoctors.length === 1 ? "grid-cols-1 justify-items-center" : "grid gap-4"}
+        ${visibleDoctors.length === 2 ? "grid-cols-2 justify-items-stretch px-40" : "grid-cols-3 md:grid-cols-3"} 
+      `}>
+        {visibleDoctors.length > 0 ? (
+          visibleDoctors.map((doctor) => (
+            <Doctor key={doctor.doctorId} doctor={doctor} />
+          ))
+        ) : (
+          <p className="text-center col-span-full text-red-500 font-semibold p-20 bg-white rounded-2xl">
+            No doctors found for "{searchTerm}"
+          </p>
+        )}
       </div>
-      {data.length > 6 && (
+
+      {filteredDoctors.length > 6 && (
         <div className="flex justify-center">
           <button
             onClick={() => setShowAll(!showAll)}

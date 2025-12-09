@@ -47,7 +47,7 @@ const DoctorDetails = () => {
           providing expert care with compassion.
         </p>
       </div>
-      <div className="card card-side bg-base-100 mt-10">
+      <div className="card lg:card-side bg-base-100 mt-10">
         <figure className="rounded-xl">
           <img src={doctorImage} alt="Movie" className="p-5" />
         </figure>
@@ -58,7 +58,7 @@ const DoctorDetails = () => {
           <h4 className="text-lg font-bold">{workingAt}</h4>
           <hr className="border-gray-300 border-dashed mt-2" />
           <p className="text-lg text-gray-400 font-semibold flex items-center">
-            <FaRegRegistered className="mr-2" /> Reg No: {registrationNumber}
+            <FaRegRegistered className="mr-2 mt-0.5" /> Reg No: {registrationNumber}
           </p>
           <hr className="border-gray-300 border-dashed mb-2" />
           <p>
@@ -73,9 +73,9 @@ const DoctorDetails = () => {
               </span>
             ))}
           </p>
-          <p className="text-lg flex">
+          <p className="text-lg text-center md:flex">
             <span className="font-semibold">Consultation Fee:</span>
-            <span className="text-blue-700 font-bold px-1 flex items-center">
+            <span className="text-blue-700 font-bold px-1 flex items-center justify-center">
               Taka : {fee} <TbCurrencyTaka />
             </span>
             <span className="font-semibold text-gray-500 mr-1">

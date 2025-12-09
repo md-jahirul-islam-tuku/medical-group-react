@@ -1,6 +1,6 @@
 import React from "react";
 
-const Banner = () => {
+const Banner = ({ searchTerm, setSearchTerm }) => {
   return (
     <div className="max-w-[1170px] mx-auto">
       <div className="hero">
@@ -19,14 +19,14 @@ const Banner = () => {
               <div>
                 <label className="input validator join-item md:rounded-l-full w-108">
                   <input
+                  className="caret-current"
                     type="text"
                     placeholder="Search any doctor..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                     required
                   />
                 </label>
-                {/* <div className="validator-hint hidden">
-                  Enter valid email address
-                </div> */}
               </div>
               <button className="btn btn-primary md:rounded-r-full join-item shadow-none mt-3 md:mt-0">
                 Search Now
@@ -35,25 +35,29 @@ const Banner = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row gap-4">
-        {/* Image 1 */}
-        <div className="w-full lg:w-1/2">
-          <img
-            src={"../../../../public/banner-img-2.jpg"}
-            alt="Image 1"
-            className="w-full h-auto object-cover rounded-lg"
-          />
-        </div>
+      {searchTerm.length > 0 ? (
+        ""
+      ) : (
+        <div className="flex flex-col lg:flex-row gap-4">
+          {/* Image 1 */}
+          <div className="w-full lg:w-1/2">
+            <img
+              src={"../../../../public/banner-img-2.jpg"}
+              alt="Image 1"
+              className="w-full h-auto object-cover rounded-lg"
+            />
+          </div>
 
-        {/* Image 2 */}
-        <div className="w-full lg:w-1/2">
-          <img
-            src={"../../../../public/banner-img-3.jpg"}
-            alt="Image 2"
-            className="w-full h-auto object-cover rounded-lg"
-          />
+          {/* Image 2 */}
+          <div className="w-full lg:w-1/2">
+            <img
+              src={"../../../../public/banner-img-3.jpg"}
+              alt="Image 2"
+              className="w-full h-auto object-cover rounded-lg"
+            />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
