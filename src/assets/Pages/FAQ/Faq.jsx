@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Faq = () => {
+
+   useEffect(() => {
+    document.title = "FAQ | MedicalGroup";
+  }, []);
   const faqs = [
     {
       q: "How do I book an appointment with a doctor?",

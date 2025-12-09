@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaRegRegistered } from "react-icons/fa6";
 import { useLoaderData, useNavigate, useParams } from "react-router";
 import { TbCurrencyTaka } from "react-icons/tb";
@@ -37,6 +37,9 @@ const DoctorDetails = () => {
     availability,
     experience,
   } = doctorDetails;
+   useEffect(() => {
+    document.title = `${name} | MedicalGroup`;
+  }, [name]);
   return (
     <div className="pt-20 bg-base-300 max-w-[1170px] mx-auto">
       <div className="text-center py-16 px-20 bg-white rounded-xl">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaFacebookSquare, FaLinkedin, FaYoutubeSquare } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { toast, ToastContainer } from "react-toastify";
@@ -10,6 +10,10 @@ export default function ContactUs() {
     email: "",
     message: "",
   });
+
+   useEffect(() => {
+    document.title = "ContactUs | MedicalGroup";
+  }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

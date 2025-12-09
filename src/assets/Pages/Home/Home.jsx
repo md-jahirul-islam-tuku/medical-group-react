@@ -10,6 +10,9 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const data = useLoaderData();
   const location = useLocation();
+  useEffect(() => {
+    document.title = "Home | MedicalGroup";
+  }, []);
 
   useEffect(() => {
     if (location.hash) {

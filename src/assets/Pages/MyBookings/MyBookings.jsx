@@ -12,6 +12,9 @@ const MyBookings = () => {
 
   // control when to show Empty State: only after all exits complete
   const [showEmpty, setShowEmpty] = useState(false);
+  useEffect(() => {
+    document.title = "Appointments | MedicalGroup";
+  }, []);
 
   useEffect(() => {
     const storedIds = getIds();
